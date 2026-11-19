@@ -70,3 +70,20 @@ The `new` keyword may look unnecessary, but it is correct. Dart allows us to use
 ```text
 100
 ```
+
+
+## Part 5: Predict the Output
+
+### My prediction
+
+I predict that the program will print:
+
+```text
+1
+5
+```
+
+### Explanation
+
+- The first output is 1 because `a.add()` increases the items by one. The assignment of -5 is ignored because the setter only accepts values greater than or equal to zero.
+- The second output is 5 because each call to `b.add()` increases the items by two. After two calls, the value is 4. Then one more item is added, making it 5.
