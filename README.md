@@ -44,3 +44,29 @@ Paid 176 RWF
 Owner: Nafisa Ahmed Hassan Musa | Balance: 864 RWF
 Student card: 14% off
 ```
+
+
+
+## Part 4: Bug Hunt
+
+I found and fixed five bugs in the original code.
+
+| Bug | Line | Why it is wrong | Fix |
+|---|---|---|---|
+| Field initialization | 2–3 | The fields `_brand` and `_battery` were not initialized. | I gave them initial values: `''` and `0`. |
+| Parent constructor | 18 | The SmartPhone constructor did not call the Phone constructor. | I added `: super(brand, battery)`. |
+| Incorrect override | 22 | The `restart()` method was marked with `@override`, but Phone has no restart method. | I removed `@override`. |
+| Missing setter | 30 | The code tried to change `p.battery`, but there was no setter. | I added a setter that accepts values between 0 and 100. |
+| Getter called like a method | 31 | `p.battery()` was incorrect because battery is a getter. | I changed it to `p.battery`. |
+
+### A line that looks wrong but is correct
+
+Line 29: `Phone p = new Phone('Tecno', 50);`
+
+The `new` keyword may look unnecessary, but it is correct. Dart allows us to use `new` when creating an object. It is optional, not an error.
+
+### Output of bug_hunt.dart
+
+```text
+100
+```
